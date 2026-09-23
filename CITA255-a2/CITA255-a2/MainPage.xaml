@@ -5,9 +5,8 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
-            <Grid RowDefinitions ="Auto,Auto,Auto" ColumnDefinitions ="*,Auto" Padding="20" RowSpacing="12" ColumnSpacing="12">
-                <Label Grid.Row ="0" Grid.Column ="0" Text="Game"/>
-                <Label Grid.Row ="0" Grid.Column ="1" Text="Hours"/>
+            <Grid RowDefinitions ="Auto,*,Auto,Auto" ColumnDefinitions ="*,Auto" Padding="20" RowSpacing="12" ColumnSpacing="12">
+                <Label Grid.Row ="0" Grid.ColumnSpan="2" Text="Game Backlog" HorizontalTextAlignment="Center" FontSize="30"/>
                 <CollectionView x:Name="gameList" Grid.Row="1" Grid.Column="0">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -22,6 +21,9 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+                <Button x:Name="totalButton" Text="Calulate Total Hours" Clicked="OnTotalButtonClicked"
+                        Grid.Row ="2" Grid.ColumnSpan="2" FontSize="30"/>
+                <Label x:Name="totalLabel" Grid.Row ="3" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontSize="30"/>
             </Grid>
         </VerticalStackLayout>
     </ScrollView>

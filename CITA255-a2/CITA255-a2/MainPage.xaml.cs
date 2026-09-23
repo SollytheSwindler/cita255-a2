@@ -8,11 +8,22 @@
         "Virtua Fighter 5 REVO World Stage", "Final Fantasy XVI"};
         List<int> hours = new List<int> {261, 37, 169, 225, 31, 24, 19, 220, 127, 0, 189, 21, 16, 89};
 
+        int total = 0;
+
         public MainPage()
         {
             InitializeComponent();
             gameList.ItemsSource = game;
             hoursList.ItemsSource = hours;
+        }
+
+        private void OnTotalButtonClicked(object? sender, EventArgs e)
+        {
+            foreach (int hourvalue in hours)
+            {
+                total = total + hourvalue;
+            }
+            totalLabel.Text = $"Total: {total} hours";
         }
     }
 }
